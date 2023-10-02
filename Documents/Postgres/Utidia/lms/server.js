@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 import  UserRoute from "./routes/auth.js"
+import ProfileRoute from "./routes/profile.js"
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 
 // Routes and middleware setup here...
 app.use("/api/v1/user",UserRoute)
+app.use("/api/v1/profile",ProfileRoute)
 app.get("/get",(req,res)=>{
     res.send("backend server is working successfully")
 })
